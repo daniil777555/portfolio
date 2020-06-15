@@ -1,0 +1,519 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 1.89;
+  letter-spacing: normal;
+  color: #565656;
+}
+
+li {
+  list-style-type: none;
+}
+
+.button {
+  cursor: pointer;
+  margin: 0 0 0 55px;
+  padding: 10px 25px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  border: none;
+  outline: none;
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1.71;
+  letter-spacing: normal;
+  color: #ffffff;
+  opacity: 0.7;
+  background-color: #54d3c3;
+  position: relative;
+}
+
+.button:before {
+  content: "\f07a";
+  font-family: FontAwesome;
+  font-size: 26px;
+  position: absolute;
+  padding: 6px 14px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #1a7066;
+  left: -57px;
+  top: 0;
+}
+
+.offering-app {
+  margin: 59px 0 0 0;
+  font-size: 39px;
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.offering-app-desc {
+  width: 320px;
+  word-break: break-all;
+  margin: 0 0 30px 0;
+  opacity: 0.93;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 2.12;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 22px 123px 16px 164px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.header .logo {
+  cursor: pointer;
+  font-family: 'Basic', sans-serif;
+  font-size: 43px;
+  font-weight: normal;
+  line-height: 0.84;
+  letter-spacing: normal;
+  color: #038c8c;
+}
+
+.header .logo:before {
+  content: "M";
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  background: #0aa096;
+  background: -webkit-gradient(linear, left bottom, left top, from(#0aa096), to(#42eee3));
+  background: linear-gradient(0deg, #0aa096 0%, #42eee3 100%);
+  font-size: 43px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.84;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+}
+
+.header .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .menu .menu-link {
+  border-right: 1px solid #565656;
+  padding: 0 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.header .menu .menu-link:hover {
+  color: #161741;
+  background-color: #d6d4d4;
+  opacity: 0.5;
+}
+
+.header .menu .menu-list:last-of-type > .menu-link:last-child {
+  border-right: none;
+}
+
+.main .slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 78px 239px 67px 180px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #00727c;
+  background: linear-gradient(135deg, #00727c 15%, #0fc3ae 88%, #0fc3ae 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00727c', endColorstr='#0fc3ae',GradientType=1 );
+  position: relative;
+}
+
+.main .slider .img-back-circle {
+  opacity: 0.86;
+  position: relative;
+  width: 453px;
+  height: 453px;
+  background-color: #059290;
+  border-radius: 50%;
+  border: 30px solid #03878a;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.main .slider .img-back-circle:after {
+  z-index: 2;
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background-color: #13b9ab;
+  width: 334px;
+  height: 334px;
+  top: 30px;
+  left: 30px;
+}
+
+.main .slider .img-back-circle:before {
+  content: "";
+  z-index: 3;
+  width: 256px;
+  height: 446px;
+  background: url(../img/iphone_28.png) 50%;
+  position: absolute;
+  top: -20px;
+  left: 68px;
+}
+
+.main .slider .offering-wrp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .slider .offering-wrp .app-year {
+  margin: 108px 0 0 55px;
+  opacity: 0.8;
+  text-transform: uppercase;
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1.19;
+  letter-spacing: normal;
+  color: #ffffff;
+  position: relative;
+}
+
+.main .slider .offering-wrp .app-year:before {
+  opacity: 0.8;
+  content: url(../img/earth.svg);
+  position: absolute;
+  left: -65px;
+}
+
+.main .slider .device-choise {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  left: 923px;
+  top: 0;
+}
+
+.main .slider .device-choise .mac {
+  width: 119px;
+  height: 123px;
+  background-color: #017c81;
+  opacity: 0.4;
+  position: relative;
+}
+
+.main .slider .device-choise .mac:hover:before {
+  content: "";
+  display: block;
+  border: 8px solid transparent;
+  border-top: 12px solid #017c81;
+  position: absolute;
+  top: 123px;
+  left: 48px;
+}
+
+.main .slider .device-choise .mac:after {
+  content: url(../img/mac.svg);
+  position: absolute;
+  top: 25%;
+  left: 20%;
+}
+
+.main .slider .device-choise .ipad {
+  width: 119px;
+  height: 123px;
+  background-color: #017c81;
+  opacity: 0.7;
+  position: relative;
+}
+
+.main .slider .device-choise .ipad:hover:before {
+  content: "";
+  display: block;
+  border: 8px solid transparent;
+  border-top: 12px solid #017c81;
+  position: absolute;
+  top: 123px;
+  left: 48px;
+}
+
+.main .slider .device-choise .ipad:after {
+  content: url(../img/ipad.svg);
+  position: absolute;
+  opacity: 0.4;
+  top: 23%;
+  left: 30%;
+}
+
+.main .slider .device-choise .iphone {
+  width: 119px;
+  height: 123px;
+  background-color: #017c81;
+  opacity: 0.9;
+  position: relative;
+}
+
+.main .slider .device-choise .iphone:before {
+  content: "";
+  display: block;
+  border: 8px solid transparent;
+  border-top: 12px solid #017c81;
+  position: absolute;
+  top: 123px;
+  left: 48px;
+}
+
+.main .slider .device-choise .iphone:after {
+  content: url(../img/iphone.svg);
+  position: absolute;
+  opacity: 0.4;
+  top: 26%;
+  left: 36%;
+}
+
+.main .about-us {
+  padding: 47px 155px 124px 190px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .about-us .about-h2 {
+  margin: 0 0 30px 0;
+  font-size: 41px;
+  font-weight: 300;
+  line-height: 0.88;
+  letter-spacing: normal;
+  color: #636363;
+}
+
+.main .about-us .about-p {
+  margin: 0 0 40px 0;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 1.47;
+  letter-spacing: normal;
+  color: #9f9f9f;
+}
+
+.main .about-us .about-img {
+  padding: 194px 102px 37px 61px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+  background: url(../img/circle.png) no-repeat 50% 50%;
+  min-height: 421px;
+  width: 481px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .about-us .about-img .about-img-h2 {
+  margin: 0;
+  font-size: 88px;
+  font-weight: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.main .about-us .about-img .about-img-p {
+  margin: 0;
+  font-size: 42px;
+  font-weight: normal;
+  line-height: 1.1;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.main .about-us .about-img:after {
+  content: url(../img/phone_app.svg);
+  position: absolute;
+  left: 177px;
+  top: 70px;
+}
+
+.main .buy-now-imgBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 176px 143px 195px 710px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #0aa699;
+  background: linear-gradient(200deg, #0aa699 0%, #01646c 77%);
+  position: relative;
+}
+
+.main .buy-now-imgBlock:before {
+  content: url(../img/laptop.png);
+  position: absolute;
+  top: 130px;
+  left: 160px;
+}
+
+.main .buy-now-h1 {
+  margin: 0;
+}
+
+.main .buy-now-span {
+  margin: 5px 0 30px;
+}
+
+.main .buy-now-slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .buy-now-slider .slider-item {
+  padding: 47px 65px 35px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  font-size: 85px;
+  cursor: pointer;
+}
+
+.main .buy-now-slider .search {
+  background-color: #01646c;
+}
+
+.main .buy-now-slider .power {
+  background-color: #097b84;
+}
+
+.main .buy-now-slider .apple {
+  background-color: #118f99;
+}
+
+.main .buy-now-slider .bascet {
+  background-color: #1da0aa;
+}
+
+.main .buy-now-slider .lock {
+  background-color: #29b7c2;
+}
+
+.main .buy-now-slider .star {
+  background-color: #3ccad5;
+}
+
+.main .main-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .main-footer .sale {
+  padding: 55px 145px 90px 173px;
+}
+
+.main .main-footer .sale .sale-persent {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0;
+  font-size: 200.1px;
+  line-height: 190px;
+  font-weight: 900;
+  color: #49d7b0;
+}
+
+.main .main-footer .sale .sale-text {
+  margin: 0;
+  letter-spacing: 0;
+  font-size: 70px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #49d7b0;
+  line-height: 92px;
+}
+
+.main .arrows {
+  padding: 120px 125px 115px 125px;
+  color: #ffffff;
+  font-size: 280px;
+  background-color: #49d7b0;
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+  -webkit-filter: FlipV;
+          filter: FlipV;
+}
+
+.footer {
+  border-top: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  padding: 38px 0;
+}
+
+.footer .footer-text {
+  font-size: 23px;
+  font-weight: 300;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: #989898;
+}
+/*# sourceMappingURL=style.css.map */
