@@ -1,0 +1,17 @@
+[
+    {
+        "id":0,
+        "text":"todo1",
+        "completed":false
+    },
+    {
+        "id":1,
+        "text":"todo2",
+        "completed":false
+    },
+    {
+        "id":2,
+        "text":"todo3",
+        "completed":false
+    }
+]
