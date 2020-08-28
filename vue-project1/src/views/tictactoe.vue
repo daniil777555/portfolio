@@ -108,6 +108,7 @@ export default {
         console.log(this.filtered().arrX)
         this.checkWin(this.filtered().arrX, "X");
         this.checkWin(this.filtered().arrO, "O");
+        this.filledField()
         return
         
       },
@@ -186,6 +187,16 @@ export default {
           this.pointX++
         }else if(player == "O"){
           this.pointO++
+        }
+      },
+
+      filledField(){
+        let filter = this.arrItems.filter(el => {
+          return el.innerTxt != ""
+        })
+        console.log(filter)
+        if(filter.length == this.arrItems.length){
+          this.changeShow()
         }
       }
     }
