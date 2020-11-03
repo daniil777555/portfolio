@@ -1,0 +1,111 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#app{
+    position: relative;
+    width: 1903px;
+    padding: 0;
+}
+
+#site{
+    position: absolute;
+    left: 380px;
+    width: 1523px;
+    border-left: 2px solid rgba(221, 221, 221, 0.933);
+}
+
+#panel{
+    width: 380px;
+    position: fixed;
+    left: 0;
+    padding: 0 0 0 20px;
+    height: 965px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.selector{
+    padding:10px 32px 12px 0;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 22px;
+    font-weight: 700;
+    line-height:1;
+    letter-spacing:0.2px;
+    background: linear-gradient(90deg, rgba(19,68,200,1) 0%, rgba(136,3,237,1) 33%, rgba(244,0,234,1) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+summary{
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing:0.2px;
+    background: linear-gradient(90deg, rgba(19,68,200,1) 0%, rgba(136,3,237,1) 33%, rgba(244,0,234,1) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    border: none;
+    outline: none;
+}
+
+.desk{
+    margin: 0 0 0 20px;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.input-in-label{
+    margin-left: 10px;
+}
+
+.input{
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid rgb(139, 139, 139);
+    outline: none;
+    box-sizing: border-box;
+}
+
+
+
+.btn{
+    display: block;
+    margin: 15px 0 0 20px;
+    border: 3px solid #07872b;
+    background-color:#47bf0f;
+    color: #fff;
+
+}
+
+.btn:hover{
+
+    border: 3px solid #17b945;
+    background-color:#0d8a36;
+    color: #fff;
+
+}
+
+.download{
+    margin-top: 20px;
+    align-self: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background-color: rgb(216, 12, 12);
+    border: 3px solid rgb(163, 39, 39);
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+
+.download:hover{
+    color: rgb(228, 226, 226);
+    background-color: rgb(184, 9, 9);
+    border: 3px solid rgb(216, 12, 12);
+}
+
+
