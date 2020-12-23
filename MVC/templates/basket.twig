@@ -1,0 +1,27 @@
+{% extends 'layout.twig' %}
+
+{% block title %}Basket{% endblock %}
+{% block content %}
+{% if stateOrder %}
+  <div class="accessOrder">
+    <h2 class="accessOrder-text">Order has been created</h2>
+  </div>
+{% endif %}
+<div class="basket">
+  <div class="main">
+    {% for pic in pics %}
+      <div class="pic-basket">
+        <p class="text">{{ pic.name }}</p> 
+        <p class="text">${{ pic.price }}</p>
+        <p class="text">{{ pic.count }}</p>
+        <p class="text">${{ pic.sum }}</p>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="footer">
+    <a href="/order" class="order btn">Order</a>
+    <p class="total-price">Total: ${{ sum }}</p>
+  </div>
+</div>
+
+{% endblock %}

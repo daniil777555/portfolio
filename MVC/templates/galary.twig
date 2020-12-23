@@ -1,0 +1,16 @@
+{% extends 'layout.twig' %}
+
+
+{% block title %}Galary{% endblock %}
+{% block content %}
+<div class="galary">
+  <p class="cat-link">
+    <a href="/galary/category" class="text">All</a>
+  </p>
+  {% for cat in categories %}
+  <p class="cat-link">
+    <a href="/galary/{{ cat.id }}" class="text">{{ cat.category|capitalize }}</a>
+  </p>
+  {% endfor %}
+</div>
+{% endblock %}

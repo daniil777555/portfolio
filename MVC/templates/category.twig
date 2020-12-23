@@ -1,0 +1,14 @@
+{% extends 'layout.twig' %}
+
+{% block title %}{{ title ? title : "All picturies" }}{% endblock %}
+{% block content %}
+<div class="galary">
+  <a class="text" href="/galary">Galary</a><span class="text"> / {{ title ? title : "All picturies" }}</span>
+  {% for img in images %}
+    <div class="img-block">
+      <a href="/galary/{{ img.category_id }}/{{ img.id }}" class="img-link"><img src="../{{ img.path }}" alt="photo" class="img"></a>
+      <p class="price">Price: {{ img.price }}</p>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

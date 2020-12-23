@@ -1,0 +1,8 @@
+{% extends 'layout.twig' %}
+{% block title %}{{ cat.title }}{% endblock %}
+{% block content %}
+  <a class="text" href="/galary">Galary</a><a class="text" href="/galary/{{ cat.id }}"> / {{ cat.title|capitalize }}</a><span class="text"> / Picture</span>
+  <img src="../../{{ pic.path }}" alt="photo" class="img img-one">
+  <p class="price-pic text">Price: {{ pic.price }}</p>
+  <button id="{{ pic.id }}" class="btn btn-add">Add to basket</button>
+{% endblock %}

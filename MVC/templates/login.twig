@@ -1,0 +1,16 @@
+{% extends 'layout.twig' %}
+
+
+{% block title %}LogIn{% endblock %}
+{% block content %}
+  <div class="input-block">
+    <form action="login/login" class="form" method="post">
+      <input type="text" required name="login" placeholder="enter your login" class="input">
+      <input type="password" required name="pass" placeholder="enter your pass" class="input">
+      <button class="btn" type="submit">Send</button> 
+    </form>
+    {% if show %}
+    <h2 class="user">Password or login is not correct</h2>
+    {% endif %}
+  </div>
+{% endblock %}

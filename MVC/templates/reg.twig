@@ -1,0 +1,16 @@
+{% extends 'layout.twig' %}
+
+
+{% block title %}Registration{% endblock %}
+{% block content %}
+  <div class="input-block">
+    <form action="reg/registr" class="form" method="post">
+      <input type="text" required name="login" placeholder="enter your login" class="input">
+      <input type="password" required name="pass" placeholder="enter your pass" class="input">
+      <button class="btn" type="submit">Send</button> 
+    </form>
+    {% if show %}
+    <h2 class="user">This password or login is exist</h2>
+    {% endif %}
+  </div>
+{% endblock %}
