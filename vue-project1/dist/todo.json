@@ -1,1 +1,25 @@
-[{"id":0,"text":"todo1","completed":false,"checked":false},{"id":1,"text":"todo2","completed":false,"checked":false},{"id":2,"text":"todo3","completed":false,"checked":false}]
+[
+	{
+		"id": 0,
+		"text": "todo1",
+		"completed": false,
+		"checked": false
+	},
+	{
+		"id": 1,
+		"text": "todo2",
+		"completed": false,
+		"checked": false
+	},
+	{
+		"id": 2,
+		"text": "todo3",
+		"completed": false,
+		"checked": false
+	},
+	{
+		"id": 3,
+		"text": "yuk",
+		"completed": false
+	}
+]

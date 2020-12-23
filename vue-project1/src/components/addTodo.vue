@@ -72,7 +72,6 @@
                     }
                     this.inputTxt ="";
                     this.$emit('add-todo',newTodo);
-                    //console.log(this.$parent.todos);
                 }
             }
         }

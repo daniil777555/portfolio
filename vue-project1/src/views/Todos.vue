@@ -54,19 +54,13 @@
         postJson(data){
             return fetch("todo.json", {
                 method: 'POST',
-                body: JSON.stringify(data),
+                body: JSON.stringify(data, null, "\t"),
                 headers: {
                     'Content-Type': 'application/json',
                     "Access-Control-Allow-Origin" : "*", 
                     "Access-Control-Allow-Credentials" : true 
                 }
             })
-              //.then((response) => {return response.json()})
-              //.then(res => {
-              //  for(r of res){
-              //    console.log(r)
-              //  }
-              //});
                 
         },
 
