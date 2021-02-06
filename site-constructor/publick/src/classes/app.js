@@ -1,5 +1,6 @@
 import {Site} from './site'
 import {SiteBar} from './siteBar'
+import {stylesToObj} from '../utilits'
 
 export class App{
   constructor(arrItems){
@@ -11,12 +12,22 @@ export class App{
     
       site.render(this.arrItems);
   
-      const updateCallback = newBlock => {
+      const addCallback = newBlock => {
         this.arrItems.push(newBlock);
         site.render(this.arrItems);
       }
+
+      const updateCallBack = (classOfBlock, style) => {
+        this.arrItems.filter(el => el.class === classOfBlock).forEach(el => Object.assign(el.style, stylesToObj(style)));
+        site.render(this.arrItems);
+      }
+
+      const deleteCallBack = (classOfBlock) => {
+        let arr = this.arrItems.filter(el => el.class !== classOfBlock);
+        site.render(arr);
+      }
   
-      new SiteBar('#panel', updateCallback);
+      new SiteBar('#panel', addCallback, updateCallBack, deleteCallBack);
       document.querySelector(".download").addEventListener("click", this.download);
     }
 

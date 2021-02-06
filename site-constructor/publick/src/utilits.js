@@ -9,6 +9,12 @@ export function toCSSotherStyle(str, style){
     for(let el of arrFromStr){
         style[el[0]] = el[1];
     }
-    return style
+    return style;
     
+}
+
+export function stylesToObj(str){
+    let obj = {};
+    str.split(";").map(el => el.split(":")).forEach(el => obj[`${el[0]}`] = el[1]);
+    return obj;
 }

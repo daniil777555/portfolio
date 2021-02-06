@@ -3,9 +3,11 @@ import {toCSSotherStyle} from "../utilits"
 import {SiteBarGen} from "./sideBar-gen"
 
 export class SiteBar{
-    constructor(selector, updateCallback){
+    constructor(selector, addCallback, updateCallBack, deleteCallBack){
         this.$el = document.querySelector(selector);
-        this.update = updateCallback;
+        this.addBlock = addCallback;
+        this.update = updateCallBack;
+        this.delete = deleteCallBack;
 
         this.init()
 
@@ -13,7 +15,11 @@ export class SiteBar{
 
     init(){
         new SiteBarGen();
-        this.$el.addEventListener('submit', this.add.bind(this))
+        document.querySelector(".form-update").addEventListener('submit', this.updateStyle.bind(this));
+        document.querySelector(".form-delete").addEventListener('submit', this.deleteBlock.bind(this));
+        document.querySelectorAll(".formAddBlock").forEach(el => {
+            el.addEventListener('submit', this.add.bind(this));
+        })
     }
 
     add(event){
@@ -64,7 +70,19 @@ export class SiteBar{
         event.target.otherStyle.value = "";
 
 
-        this.update(obj);
+        this.addBlock(obj);
+    }
+
+    updateStyle(event){
+        event.preventDefault();
+        this.update(event.target.classBlock.value, event.target.updateBlock.value);
+        event.target.classBlock.value = event.target.updateBlock.value = "";
+    }
+
+    deleteBlock(event){
+        event.preventDefault();
+        this.delete(event.target.classBlockDelete.value);
+        event.target.classBlockDelete.value = "";
     }
 
 }

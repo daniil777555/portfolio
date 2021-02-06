@@ -5,23 +5,23 @@ body{
 
 #app{
     position: relative;
-    width: 1903px;
+    max-width: 100vw;
+    margin: 0;
     padding: 0;
 }
 
 #site{
     position: absolute;
     left: 380px;
-    width: 1523px;
     border-left: 2px solid rgba(221, 221, 221, 0.933);
 }
 
 #panel{
     width: 380px;
+    height: 100vh;
     position: fixed;
     left: 0;
-    padding: 0 0 0 20px;
-    height: 965px;
+    padding: 0 0 20px 20px;
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
@@ -108,4 +108,11 @@ summary{
     border: 3px solid rgb(216, 12, 12);
 }
 
+.additional-form{
+    border: 1px solid blue;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding-bottom: 5px;
+    margin: 10px 0 10px;
+}
 
