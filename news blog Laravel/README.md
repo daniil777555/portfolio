@@ -1,3 +1,9 @@
+I would like to say about my mistake, in some files you can see something like that: $new->image or $newBody, it is because of I did not know that news singular is also news, and as I found out about it, at once I tried out to change in some places names of variables but not everywhere it can be done.
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
