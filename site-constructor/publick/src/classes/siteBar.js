@@ -9,7 +9,7 @@ export class SiteBar{
         this.update = updateCallBack;
         this.delete = deleteCallBack;
 
-        this.init()
+        this.init();
 
     }
 
