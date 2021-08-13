@@ -7,8 +7,10 @@
                 Start sorting!
             </button>
         </header>
+        <transition name="fade">
         <ModalW v-if="isModalOpen" v-model="quantityPeople"
             v-on:startSorting="startSorting" v-on:isModalOpen="isModalOpen = $event"/>
+        </transition>
 
         <Table v-if="isTableOpen" v-on:successOpen="successOpen = $event"
             :quantityPeople="quantityPeople"/>
@@ -47,8 +49,10 @@ export default {
             this.startTime =  new Date().getTime();
         },
     },
+    
 
     watch:{
+
         quantityPeople(value){
             if(value > 100) return this.quantityPeople = 100
             else if(value < 20) return this.quantityPeople = 20
@@ -59,6 +63,12 @@ export default {
 </script>
 
 <style>
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .8s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+        opacity: 0;
+    }
     .container{
         position: relative;
         max-width: 1200px;

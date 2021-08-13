@@ -6,7 +6,12 @@
         </header>
         <main class="main">
             <label class="m-desc" for="m-input">Enter a number of how many people you want to add to the list.</label>
-            <input type="number" class="m-input" max="100" min="20" id="m-input"
+            <div class="btn-wrapper">
+                <button class="btn btn-choose-number" v-on:click="chooseNumber(20)">20</button> 
+                <button class="btn btn-choose-number" v-on:click="chooseNumber(50)">50</button> 
+                <button class="btn btn-choose-number" v-on:click="chooseNumber(100)">100</button>
+            </div>  
+            <input type="number" class="m-input" max="100" min="20" id="m-input" :value="inputVal"
                 v-bind:quantityPeople="quantityPeople" v-on:input="$emit('input', $event.target.value)">
         </main>
         <footer class="footer">
@@ -22,8 +27,20 @@ export default {
   	name: 'ModalW',
     props:{
         isModalOpen: Boolean,
-        quantityPeople: Number
+        quantityPeople: Number,
     },
+    data(){
+        return{
+            inputVal: 0,
+        }
+    },
+
+    methods:{
+        chooseNumber(num){
+            this.$emit('input', num);
+            this.inputVal = num;
+        }
+    }
 }
 
 </script>
@@ -78,6 +95,19 @@ export default {
         line-height: 18px;
         color: #555;
         margin: 0 0 14px 0;
+    }
+
+    .btn-choose-number{
+        padding: 7px 10px;
+        margin: 0 20px 0 0;
+    }
+
+    .btn-choose-number:hover{
+        background: rgb(240, 240, 240);
+    }
+
+    .btn-wrapper{
+        margin: 10px 0;
     }
 
     .m-input{
