@@ -15,6 +15,7 @@ export function NavBar() {
         <span>
           <NavLink to="/" className={className}>Home</NavLink>
           <NavLink to="/todos" className={className}>ToDo</NavLink>
+          <NavLink to="/users" className={className}>Users</NavLink>
         </span>
       </nav>
     </div>

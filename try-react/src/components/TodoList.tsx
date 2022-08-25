@@ -1,6 +1,5 @@
 import React, { useCallback } from 'react'
-import { useInitialFetchTodos } from '../hooks/initial-fetch-todos'
-import { useAppDispatch, useAppSelector } from '../hooks/store-hooks'
+import { useActions, useAppDispatch, useAppSelector } from '../hooks/store-hooks'
 import { store } from '../store'
 import { fetchTodos } from '../store/todos'
 import { ITodo } from '../types/ITodo'
@@ -13,25 +12,22 @@ interface IProps {
 }
 
 export function TodoList({ todos, classes }: IProps) {
-  const { hasMore } = useAppSelector(state => state.todos)
+  const { hasMore, loading, initialFetchRejected } = useAppSelector(state => state.todos)
+  const { incrementPage } = useActions()
   let iterator = 0
-  let loading = false
-  let page = 1
   const dispatch = useAppDispatch()
-  const className = 'flex flex-col content-center max-w-fit mx-auto ' + (classes ?? '')
+  const className = 'flex flex-col items-center mx-auto ' + (classes ?? '')
 
-  const paginate =  async () => {
-    const hasMore = store.getState().todos.hasMore
-    if (loading || !hasMore) return
+  const paginate =  useCallback(async () => {
+    if (loading) return
 
-    loading = true
     iterator++
-    page++
-    await dispatch(fetchTodos(page))
-    loading = false
-  }
+    incrementPage()
+    await dispatch(fetchTodos(store.getState().todos.page))
+    
+    
+  }, [incrementPage, iterator, loading, dispatch])
 
-  useInitialFetchTodos()
   return (
     <div className={className}>
       { 
@@ -39,16 +35,8 @@ export function TodoList({ todos, classes }: IProps) {
         todos.map(todo => <TodoCard todo={todo} key={todo.id} classList={'mb-5'}/>)
       }
       { 
-        (!!todos.length) && 
+        (!!todos.length && hasMore && !initialFetchRejected) && 
         <Paginator page={iterator} observed={paginate}/>
-      }
-      {
-        (loading && !todos.length) &&
-        'loading'
-      }
-      {
-        (!loading && !todos.length) &&
-        ' nothing'
       }
     </div>
   )

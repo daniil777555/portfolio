@@ -1,13 +1,15 @@
 import { Action, configureStore } from '@reduxjs/toolkit'
 import thunk, { ThunkAction } from 'redux-thunk'
 import todosReducer  from './todos'
+import { usersAPI } from './users.api'
 
 export const store = configureStore({
   reducer: {
-    todos: todosReducer
+    todos: todosReducer,
+    [usersAPI.reducerPath]: usersAPI.reducer
   },
   middleware: 
-    getDefaultMiddleware => getDefaultMiddleware().concat(thunk)
+    getDefaultMiddleware => getDefaultMiddleware().concat(usersAPI.middleware, thunk)
   
 })
 

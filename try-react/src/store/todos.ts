@@ -1,12 +1,20 @@
-import { ActionReducerMapBuilder, createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
+import {
+  ActionReducerMapBuilder,
+  createAsyncThunk,
+  createSlice,
+  PayloadAction
+} from '@reduxjs/toolkit'
 import { ITodo } from '../types/ITodo'
 import { ITodoState } from '../types/ITodoState'
 import { distinct } from '../utils/arrays'
-import { getTodos } from '../utils/queries/todos'
+import { getTodos } from '../utils/queries'
 
 const initialState: ITodoState = {
   todos: [],
-  hasMore: true
+  hasMore: true,
+  initialFetchRejected: false,
+  loading: true,
+  page: 1,
 }
 
 export const fetchTodos = createAsyncThunk(
@@ -21,17 +29,17 @@ export const fetchTodos = createAsyncThunk(
 )
 
 const reducers = {
-  setTodos: (
-    state: ITodoState,
-    action: PayloadAction<ITodo[]>
-  ) => {
+  setTodos: (state: ITodoState, action: PayloadAction<ITodo[]>) => {
     state.todos = distinct([...state.todos, ...action.payload])
   },
-  pushTodo: (
-    state: ITodoState,
-    action: PayloadAction<ITodo>
-  ) => {
+  pushTodo: (state: ITodoState, action: PayloadAction<ITodo>) => {
     state.todos.unshift(action.payload)
+  },
+  initialFetchWasRejected: (state: ITodoState) => {
+    state.initialFetchRejected = true
+  },
+  incrementPage: (state: ITodoState) => {
+    state.page++
   },
   changeCoplition: (
     state: ITodoState,
@@ -48,21 +56,23 @@ const reducers = {
   }
 }
 
-const extraReducers = (builder: ActionReducerMapBuilder<ITodoState>) => {
+const extraReducers = (
+  builder: ActionReducerMapBuilder<ITodoState>
+) => {
   builder
+    .addCase(fetchTodos.pending, (state) => {
+      state.loading = true
+    })
     .addCase(fetchTodos.fulfilled, (state, action) => {
-      console.log(!action.payload.length, state.hasMore)
       if (!action.payload.length) {
         state.hasMore = false
-        console.log(!action.payload.length, state.hasMore)
       }
-      state.todos = distinct([...state.todos, ...action.payload]);
-      console.log("hasMore", state.hasMore)
+      state.todos = distinct([...state.todos, ...action.payload])
+      state.loading = false
     })
     .addCase(fetchTodos.rejected, (state) => {
-      
-      // call alert
-    });
+      state.loading = false
+    })
 }
 
 export const todosSlice = createSlice({

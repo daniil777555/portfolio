@@ -1,14 +1,18 @@
 import { useEffect } from 'react'
 import { fetchTodos } from '../store/todos'
-import { useAppDispatch, useAppSelector } from './store-hooks'
-
+import { useActions, useAppDispatch, useAppSelector } from './store-hooks'
 
 export function useInitialFetchTodos() {
-  const { todos: storeTodos } = useAppSelector(state => state.todos)
+  const { todos, page } = useAppSelector(state => state.todos)
+  const { initialFetchWasRejected } = useActions()
   const dispatch = useAppDispatch()
-  const doFetch = async () => await dispatch(fetchTodos(1))
+  const doFetch = async () => await dispatch(fetchTodos(page)).then(res => {
+    if (res.meta.requestStatus === 'rejected') {
+      initialFetchWasRejected()
+    }
+  })
 
   useEffect(() => {
-    if (!storeTodos.length) doFetch()
-  })
+    if (!todos.length) doFetch()
+  }, [])
 }
