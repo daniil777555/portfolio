@@ -12,21 +12,21 @@ interface IProps {
 }
 
 export function TodoList({ todos, classes }: IProps) {
-  const { hasMore, loading, initialFetchRejected } = useAppSelector(state => state.todos)
+  const { hasMore, initialFetchRejected } = useAppSelector(state => state.todos)
   const { incrementPage } = useActions()
   let iterator = 0
   const dispatch = useAppDispatch()
   const className = 'flex flex-col items-center mx-auto ' + (classes ?? '')
 
   const paginate =  useCallback(async () => {
-    if (loading) return
+    if (store.getState().todos.loading) return
 
     iterator++
     incrementPage()
     await dispatch(fetchTodos(store.getState().todos.page))
     
     
-  }, [incrementPage, iterator, loading, dispatch])
+  }, [incrementPage, iterator,  dispatch])
 
   return (
     <div className={className}>
