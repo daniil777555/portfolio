@@ -1,9 +1,22 @@
 <template>
   <div class="draw pb-5 h-full flex flex-col">
     <div class="mb-4 flex gap-1">
-      <div class="flex items-center">
+      <div class="flex items-center mr-3">
         <span class="mr-2">Color: </span>
-        <ColorPicker v-model:pureColor="color" />
+        <div v-click-outside="() => (showPicker = false)" class="relative">
+          <div
+            class="draw__color-block cursor-pointer"
+            :style="'background:' + color + ';'"
+            @click="showPicker = !showPicker"
+          />
+          <Transition name="fade">
+            <Chrome
+              v-show="showPicker"
+              v-model="color"
+              class="absolute top-full left-0 mt-1"
+            />
+          </Transition>
+        </div>
       </div>
       <div class="flex items-center">
         <span class="mr-2">Stroke width: </span>
@@ -28,18 +41,19 @@
 </template>
 
 <script setup lang="ts">
-import { ColorPicker } from 'vue3-colorpicker'
-import 'vue3-colorpicker/style.css'
+// @ts-ignore
+import { Chrome } from '@ckpack/vue-color'
 
 const { state: canvasState, setColor, setStrokeWidth, setFillColor } = useCanvasState()
 const fillSelected = ref(false)
+const showPicker = ref(false)
 
 const color = computed({
   get() {
     return canvasState.color
   },
-  set(color: string) {
-    setColor(color)
+  set(color: any) {
+    setColor(color.hex)
   }
 })
 
@@ -94,6 +108,12 @@ function downloadPic() {
 <style lang="scss" scoped>
 .draw {
   height: calc(100vh - 96px);
+
+  &__color-block {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+  }
 
   &__fill {
     padding: 5px;
