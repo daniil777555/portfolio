@@ -1,5 +1,7 @@
+from collections import Counter
 from copy import deepcopy
 import numpy as np
+
 
 class KNNModel:
     def __init__(self, k=1):
@@ -10,7 +12,8 @@ class KNNModel:
     def get_near_neighbors(self, x):
         res = []
         distances = np.array(
-            np.power(np.sum(np.square(self.X - x), axis=1), 1 / 2))
+            np.power(np.sum(np.square(x - self.X), axis=1), 1 / 2))
+
 
         distances_copy = deepcopy(distances)
 
@@ -28,7 +31,7 @@ class KNNModel:
 
     def predict(self, x_test):
         res = []
-        
+
         for i in range(len(x_test)):
             res.append([])
             neighbors = self.get_near_neighbors(x_test[i])
@@ -36,6 +39,6 @@ class KNNModel:
             for (_, index) in neighbors:
                 res[i].append(self.y[index])
 
-            res[i] = (len(res[i]) / 2 <= np.sum(res[i])).astype(int)        
+            res[i] = Counter(res[i]).most_common(1)[0][0]
 
         return res
