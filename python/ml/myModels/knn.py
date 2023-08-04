@@ -10,20 +10,12 @@ class KNNModel:
         self.k = k
 
     def get_near_neighbors(self, x):
-        res = []
         distances = np.array(
             np.power(np.sum(np.square(x - self.X), axis=1), 1 / 2))
 
+        dist_ind = distances.argsort()
 
-        distances_copy = deepcopy(distances)
-
-        for i in range(self.k):
-            min_val = np.amin(distances_copy)
-            res.append(
-                (min_val, np.where(distances == min_val)[0][0]))
-            distances_copy = np.delete(distances_copy, [res[i][1]])
-
-        return res
+        return dist_ind[:self.k]
 
     def fit(self, X, y):
         self.X = X
@@ -36,7 +28,7 @@ class KNNModel:
             res.append([])
             neighbors = self.get_near_neighbors(x_test[i])
 
-            for (_, index) in neighbors:
+            for index in neighbors:
                 res[i].append(self.y[index])
 
             res[i] = Counter(res[i]).most_common(1)[0][0]
