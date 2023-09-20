@@ -17,7 +17,8 @@ class LogisticRegrassion:
         X = self._get_scaled_data(X)
 
         np.random.seed(1)
-        self.w = 0.01 * np.random.randn(n_features)
+        # 0.01 * np.random.randn(n_features)
+        self.w = np.sum(X * np.random.randn(n_features) * 0.01, axis=0)
         self.b = 0
 
         for _ in range(self.n_iters):
