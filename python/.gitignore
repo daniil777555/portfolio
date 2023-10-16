@@ -2,6 +2,10 @@ ml/Tenserflow/data
 ml/Tenserflow/face_detection/data
 ml/Tenserflow/face_detection/aug_data
 /**/data
+/**/aug_data
 /**/imageclassifier
+/**/deepfake
+/**/boobsdetector
 /**/jigsaw-toxic-comment-classification-challenge
 capuchin_birds.h5
+boobsdetector_2.h5
