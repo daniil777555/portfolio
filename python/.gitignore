@@ -7,5 +7,7 @@ ml/Tenserflow/face_detection/aug_data
 /**/deepfake
 /**/boobsdetector
 /**/jigsaw-toxic-comment-classification-challenge
+/**/modelconverter
+tesseract_path.py
 capuchin_birds.h5
 boobsdetector_2.h5
