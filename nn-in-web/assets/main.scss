@@ -1,0 +1,70 @@
+@import 'vars.scss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  /* for removing the highlight when tap */
+  -webkit-tap-highlight-color: transparent;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+input,
+textarea {
+  margin: 0;
+  font-family: $font-primary;
+  color: $color-black;
+}
+
+body {
+  background: $color-bg;
+}
+
+button,
+a {
+  font-family: $font-primary;
+  text-decoration: none;
+}
+
+a,
+a:visited {
+  color: $color-blue;
+}
+
+img {
+  display: block;
+}
+
+*,
+*:before,
+*:after {
+  outline: none;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  color: $color-black;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 80px;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: -0.03em;
+}
+
+svg {
+  fill: currentColor;
+}
