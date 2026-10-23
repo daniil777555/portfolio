@@ -1,13 +1,5 @@
 <template>
   <main class="main pt-20 px-4 pb-10">
-    <div class="fixed bottom-4 right-4 rounded-md main__made-by-block">
-      <NuxtLink to="https://solves.pro" target="_blank" class="p-2 block">
-        <div class="flex items-center gap-1">
-          <p class="main__made-by">Made by Solves</p>
-          <img src="/logo.png" alt="Logo" class="w-6 h-6 mt-[3px]">
-        </div>
-      </NuxtLink>
-    </div>
     <h3 class="text-3xl font-bold mx-auto w-fit mb-6">
       Upload your image
     </h3>
